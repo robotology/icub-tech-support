@@ -1,2 +1,6 @@
 # icub-support
-This is a virtual repository that provides support requests for individual robots. Please tag questions with the name of the robot.
+This respository hosts tickets relative to requesto of support for individual iCub robots.
+
+All issues are public, but to post a new issue you need a github account. Administrators will assign a tag that identifies the robot and the type of question/issue.
+
+
