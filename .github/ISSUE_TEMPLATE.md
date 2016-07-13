@@ -1,4 +1,4 @@
-Please fill in the following two sections:
+Please **fill in the following two sections** and then **remove any comment become unnecessary**:
 
 ##### Description of the failure
 
