@@ -3,7 +3,7 @@ Please **fill in the following two sections** and then **remove any comment and/
 ### Description of the failure
 
 
-### Detailed conditions and logs when the failure occurred
+### Detailed conditions and logs of the failure
 
 
 ---
