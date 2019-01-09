@@ -4,4 +4,4 @@
 
 This respository hosts [**tickets**](https://github.com/robotology/icub-support/issues) relative to requests of support for individual iCub robots.
 
-###### [General rules for posting](/.github/SUPPORT.md)
+#### [General rules for posting](/.github/SUPPORT.md)
