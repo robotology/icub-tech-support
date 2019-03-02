@@ -1,6 +1,6 @@
 # icub-support
 
-<a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a>
+[![ZenHub](https://img.shields.io/badge/Shipping_faster_with-ZenHub-435198.svg)](https://zenhub.com)
 
 This respository hosts [**tickets**](https://github.com/robotology/icub-support/issues) relative to requests of support for individual iCub robots.
 
