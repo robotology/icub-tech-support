@@ -1,8 +1,8 @@
-# icub-support
+# icub-tech-support
 
 [![ZenHub](https://img.shields.io/badge/Shipping_faster_with-ZenHub-435198.svg)](https://zenhub.com)
 
-This respository hosts [**tickets**](https://github.com/robotology/icub-support/issues) relative to requests of support for individual iCub robots.
+This respository hosts [**tickets**](https://github.com/robotology/icub-support/issues) relative to requests of support for individual robots, including iCub and R1.
 
 #### [General rules for posting](/.github/SUPPORT.md)
 
