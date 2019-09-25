@@ -9,4 +9,10 @@ Fill in the following two sections
 ### Description of the failure
 
 
-### Detailed conditions and logs of the failure
+### Detailed conditions 
+
+
+### Add log files of the failure
+
+
+
