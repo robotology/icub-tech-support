@@ -7,4 +7,4 @@
 
 ### [General rules for posting](/.github/SUPPORT.md)
 
-### Open up a new [Support Request][../../issues/new/choose]
+### Open up a new [Support Request](../../issues/new/choose)
