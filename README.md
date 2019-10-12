@@ -6,3 +6,5 @@
 ### This respository hosts [**tickets :label:**](../../issues) relative to requests of support for individual robots, including iCub and R1.
 
 ### [General rules for posting](/.github/SUPPORT.md)
+
+### Open up a new [Support Request][../../issues/new/choose]
