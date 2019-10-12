@@ -12,7 +12,7 @@ Use this issue tracking system only for robot maintenance by always indicating t
 - either using labels if you're already a contributor,
 - or by specifying it while detailing the issue.
 
-Fill in the following two sections
+Fill in three following two sections
 -->
 
 ## Description of the failure
