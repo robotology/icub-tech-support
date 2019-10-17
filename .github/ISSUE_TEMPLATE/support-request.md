@@ -12,14 +12,14 @@ Use this issue tracking system only for robot maintenance by always indicating t
 - either using labels if you're already a contributor,
 - or by specifying it while detailing the issue.
 
-Fill in three following two sections
+Fill in the following sections
 -->
 
-## Description of the failure
+## Brief description of the request/failure
 
 
-## Detailed conditions
+## Detailed context
 
 
-## Add log files of the failure
+## Accompanying material
 <!-- Please attach here any file you may consider useful (pictures, screenshot, logs, etc.). -->
