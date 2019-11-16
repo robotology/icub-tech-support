@@ -1,6 +1,6 @@
 ---
 name: Support Request
-about: Template for Support requests
+about: Template for Support requests.
 title: ''
 labels: ''
 assignees: julijenv

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Robotology Q&A
+    url: https://github.com/robotology/QA
+    about: To open tickets unrelated to robot maintainance.
+  - name: iCub Community Forum
+    url: https://spectrum.chat/icub
+    about: For general discussions.
