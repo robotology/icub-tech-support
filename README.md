@@ -7,4 +7,4 @@
 
 ### [General rules for posting](/.github/SUPPORT.md)
 
-### Open up a [**New Support Request :label:**](../../issues/new/choose)
+### [![Ticket](https://img.shields.io/badge/Open_Up-New_Support_Request-informational?style=for-the-badge&logo=github)](../../issues/new/choose) :label:
