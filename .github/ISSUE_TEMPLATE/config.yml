@@ -1,6 +1,6 @@
 blank_issues_enabled: false
 contact_links:
   - name: Robotology Community
-    url: https://github.com/robotology/QA
+    url: https://github.com/robotology/QA/discussions
     about: For general discussions.
 
