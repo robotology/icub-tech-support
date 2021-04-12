@@ -6,8 +6,8 @@ body:
   attributes:
     value: |
       ⚠
-      - Please, remember to indicate the name of your robot by assigning the proper label 🔖
-      - Verify first that your issue is not [already reported on GitHub][issue search].
+      Verify first that your issue is not [already reported on GitHub][issue search].
+      Please, remember to indicate the name of your robot by assigning the proper label 🔖
 
       [issue search]: https://github.com/robotology/icub-tech-support/search?q=is%3Aissue&type=issues    
 - type: textarea
