@@ -1,0 +1,23 @@
+name: Support Request
+description: Support request for robot maintenance
+assignees: violadelbono
+body:
+- type: markdown
+  attributes:
+    value: Please, remember to indicate the name of your robot by assigning the proper label.
+- type: textarea
+  attributes:
+    label: Request/Failure description
+    description: Summarize the request concisely.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Detailed context
+    description: Provide a more detailed description of the problem.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Additional context
+    description: Please attach here any material you may consider useful (pictures, screenshots, logs, etc.).
