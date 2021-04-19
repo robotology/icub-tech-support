@@ -7,9 +7,15 @@ body:
     value: |
       ⚠
       Verify first that your issue is not [already reported on GitHub][issue search].
-      Please, remember to indicate the name of your robot by assigning the proper label 🔖
 
       [issue search]: https://github.com/robotology/icub-tech-support/search?q=is%3Aissue&type=issues    
+- type: input
+  attributes:
+    label: Robot name 🤖
+    description: Please enter the name of your robot.
+    placeholder: iCub[Town][XY] or R1SN[XYZ]
+  validations:
+    required: true
 - type: textarea
   attributes:
     label: Request/Failure description
