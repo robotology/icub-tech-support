@@ -2,5 +2,5 @@ blank_issues_enabled: false
 contact_links:
   - name: 👨🏻‍💻 Robotology Community
     url: https://github.com/robotology/community/discussions
-    about: For general discussions.
+    about: For general discussions
 
