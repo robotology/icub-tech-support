@@ -1,6 +1,6 @@
 name: 🤖 Support Request
 description: Support request for robot maintenance
-assignees: violadelbono
+assignees: violadelbono, Uboldi80
 body:
 - type: markdown
   attributes:
