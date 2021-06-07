@@ -13,7 +13,7 @@ body:
   attributes:
     label: Device name 🤖
     description: Please enter the name of your robot or device. If you are allowed, also assign the corresponding label 🔖
-    placeholder: Examples: iCub[Town][XY], R1SN[XYZ], IIT12487_SN[XYZ]
+    placeholder: Examples: iCubTownXY, R1SNXYZ, IIT12487_SNXYZ
   validations:
     required: true
 - type: textarea
