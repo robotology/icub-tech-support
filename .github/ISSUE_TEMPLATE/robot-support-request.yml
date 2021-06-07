@@ -11,9 +11,9 @@ body:
       [issue search]: https://github.com/robotology/icub-tech-support/search?q=is%3Aissue&type=issues    
 - type: input
   attributes:
-    label: Robot name 🤖
-    description: Please enter the name of your robot. If you are allowed, also assign the corresponding label 🔖
-    placeholder: iCub[Town][XY] or R1SN[XYZ]
+    label: Device name 🤖
+    description: Please enter the name of your robot or device. If you are allowed, also assign the corresponding label 🔖
+    placeholder: Examples: iCub[Town][XY], R1SN[XYZ], IIT12487_SN[XYZ]
   validations:
     required: true
 - type: textarea
