@@ -1,5 +1,5 @@
-name: 🤖 Robot Support Request
-description: Support request for robot maintenance
+name: 🤖 HW Support Request
+description: Support request for HW maintenance
 assignees: violadelbono, Uboldi80
 body:
 - type: markdown
