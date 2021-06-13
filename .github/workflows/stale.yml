@@ -1,4 +1,4 @@
-name: 'Close stale issues'
+name: 'Handle stale issues'
 on:
   schedule:
     - cron: '0 8 * * *'
@@ -15,3 +15,4 @@ jobs:
           days-before-close: 7
           stale-issue-label: stale
           exempt-issue-labels: pinned
+          operations-per-run: 200
