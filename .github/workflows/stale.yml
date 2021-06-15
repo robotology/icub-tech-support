@@ -14,5 +14,6 @@ jobs:
           days-before-stale: 60
           days-before-close: 7
           stale-issue-label: stale
+          remove-stale-when-updated: false
           exempt-issue-labels: pinned
           operations-per-run: 200
