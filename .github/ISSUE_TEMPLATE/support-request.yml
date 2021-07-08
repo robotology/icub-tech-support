@@ -1,6 +1,6 @@
 name: 🤖 HW Support Request
 description: Support request for HW maintenance
-assignees: violadelbono, Uboldi80
+assignees: Uboldi80
 body:
 - type: markdown
   attributes:
