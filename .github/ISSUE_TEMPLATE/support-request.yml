@@ -34,5 +34,5 @@ body:
     description: Please attach here any material you may consider useful (pictures, screenshots, logs, etc.).
 - type: textarea
   attributes:
-    label: How does it affect me?
+    label: How does it affect you?
     description: Optional field where you can quantify the impact of the issue on your workflow.
