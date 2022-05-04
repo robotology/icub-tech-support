@@ -32,3 +32,7 @@ body:
   attributes:
     label: Additional context
     description: Please attach here any material you may consider useful (pictures, screenshots, logs, etc.).
+- type: textarea
+  attributes:
+    label: How does it affect me?
+    description: Additional field where you can quantify the impact of the issue on your workflow.
