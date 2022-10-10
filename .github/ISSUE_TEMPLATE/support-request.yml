@@ -1,5 +1,6 @@
 name: 🤖 HW Support Request
 description: Support request for HW maintenance
+assignees: "Fabrizio69,AntonioConsilvio"
 body:
 - type: markdown
   attributes:
