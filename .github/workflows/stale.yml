@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/stale@v7.0.0
         with:
-          stale-issue-message: 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs.'
+          stale-issue-message: 'This issue has been automatically marked as stale because it did not have recent activity. It will be closed if no further activity occurs.'
           close-issue-message: 'This issue has been automatically closed due to inactivity. Feel free to open it again if needed.'
           days-before-stale: 60
           days-before-close: 7
