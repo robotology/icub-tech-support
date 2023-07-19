@@ -9,11 +9,77 @@ body:
       Verify first that your issue is not [already reported on GitHub][issue search].
 
       [issue search]: https://github.com/robotology/icub-tech-support/search?q=is%3Aissue&type=issues    
-- type: input
+- type: dropdown
   attributes:
     label: Device name 🤖
     description: Please enter the name of your robot or device. If you are allowed, also assign the corresponding label 🔖
     placeholder: iCub[Town][XY], R1SN[XYZ], IIT[ABCDE]_SN[XYZ]...
+    options:
+      - ergoCub 1.0 S/N000
+      - ergoCub 1.1 S/N001
+      - ergoCub 1.1 S/N002
+      - iCubBarcelona01
+      - iCubBielefeld01
+      - iCubBielefeld03
+      - iCubChemnitz01 S/N:042
+      - iCubDarmstadt01
+      - iCubDijon01
+      - iCubEdinburgh01
+      - iCubErzelli01
+      - iCubErzelli02
+      - iCubErzelli03
+      - iCubFrankfurt01
+      - iCubGenova01
+      - iCubGenova02
+      - iCubGenova03
+      - iCubGenova04 (iRonCub1)
+      - iCubGenova05 (lumix)
+      - iCubGenova06
+      - iCubGenova07
+      - iCubGenova08
+      - iCubGenova09 (iRonCub3)
+      - iCubGenova10
+      - iCubGenova11 S/N050
+      - iCubGrenoble01
+      - iCubHamburg01
+      - iCubHeadV3
+      - iCubHeidelberg01
+      - iCubHertfordshire01
+      - iCubHongKong01 S/N:041
+      - iCubLausanne01
+      - iCubLausanne02
+      - iCubLisbona01
+      - iCubLondon01
+      - iCubLugano01
+      - iCubLyon01
+      - iCubManchester01
+      - iCubMoscow01
+      - iCubMunich01
+      - iCubNancy01
+      - iCubNottingham01
+      - iCubOsaka01
+      - iCubParis01
+      - iCubParis02
+      - iCubPisa01
+      - iCubPlymouth01
+      - iCubPrague01
+      - iCubRome01
+      - iCubRome02
+      - iCubSeoul01
+      - iCubShanghai01 S/N:049
+      - iCubSheffield01
+      - iCubShenzhen01
+      - iCubSingapore01
+      - iCubTwente01
+      - iCubUrbana01
+      - iCubValparaiso01
+      - iCubWaterloo01
+      - iCubZagreb01
+      - iCubNancy01
+      - R1SN000
+      - R1SN001
+      - R1SN002
+      - R1SN003
   validations:
     required: true
 - type: textarea
