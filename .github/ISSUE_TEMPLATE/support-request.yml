@@ -19,6 +19,8 @@ body:
       - "ergoCub 1.0 S/N:000"
       - "ergoCub 1.1 S/N:001"
       - "ergoCub 1.1 S/N:002"
+      - "iCubAberystwyth01 S/N:018"
+      - "iCubAnkara01 S/N:12"
       - "iCubBarcelona01 S/N:013"
       - "iCubBielefeld01 S/N:006"
       - "iCubBielefeld03 S/N:019"
