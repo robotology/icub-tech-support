@@ -1,6 +1,9 @@
 name: 🤖 HW Support Request
+title: Short Failure Description
 description: Support request for HW maintenance
 assignees: "sgiraz,AntonioConsilvio"
+labels: ["form-type-support"]
+
 body:
 - type: markdown
   attributes:
@@ -10,79 +13,72 @@ body:
 
       [issue search]: https://github.com/robotology/icub-tech-support/search?q=is%3Aissue&type=issues    
 - type: dropdown
+  id: robot
   attributes:
-    label: Device name 🤖
+    label: Robot Name 🤖
     description: Please enter the name of your robot or device. If you are allowed, also assign the corresponding label 🔖
-    placeholder: iCub[Town][XY], R1SN[XYZ], IIT[ABCDE]_SN[XYZ]...
     options:
-      - ergoCub 1.0 S/N000
-      - ergoCub 1.1 S/N001
-      - ergoCub 1.1 S/N002
-      - iCubBarcelona01
-      - iCubBielefeld01
-      - iCubBielefeld03
-      - iCubChemnitz01 S/N:042
-      - iCubDarmstadt01
-      - iCubDijon01
-      - iCubEdinburgh01
-      - iCubErzelli01
-      - iCubErzelli02
-      - iCubErzelli03
-      - iCubFrankfurt01
-      - iCubGenova01
-      - iCubGenova02
-      - iCubGenova03
-      - iCubGenova04 (iRonCub1)
-      - iCubGenova05 (lumix)
-      - iCubGenova06
-      - iCubGenova07
-      - iCubGenova08
-      - iCubGenova09 (iRonCub3)
-      - iCubGenova10
-      - iCubGenova11 S/N050
-      - iCubGrenoble01
-      - iCubHamburg01
-      - iCubHeadV3
-      - iCubHeidelberg01
-      - iCubHertfordshire01
-      - iCubHongKong01 S/N:041
-      - iCubLausanne01
-      - iCubLausanne02
-      - iCubLisbona01
-      - iCubLondon01
-      - iCubLugano01
-      - iCubLyon01
-      - iCubManchester01
-      - iCubMoscow01
-      - iCubMunich01
-      - iCubNancy01
-      - iCubNottingham01
-      - iCubOsaka01
-      - iCubParis01
-      - iCubParis02
-      - iCubPisa01
-      - iCubPlymouth01
-      - iCubPrague01
-      - iCubRome01
-      - iCubRome02
-      - iCubSeoul01
-      - iCubShanghai01 S/N:049
-      - iCubSheffield01
-      - iCubShenzhen01
-      - iCubSingapore01
-      - iCubTwente01
-      - iCubUrbana01
-      - iCubValparaiso01
-      - iCubWaterloo01
-      - iCubZagreb01
-      - iCubNancy01
-      - R1SN000
-      - R1SN001
-      - R1SN002
-      - R1SN003
-  validations:
-    required: true
+      - "ergoCub 1.0 S/N:000"
+      - "ergoCub 1.1 S/N:001"
+      - "ergoCub 1.1 S/N:002"
+      - "iCubBarcelona01 S/N:013"
+      - "iCubBielefeld01 S/N:006"
+      - "iCubBielefeld03 S/N:019"
+      - "iCubChemnitz01 S/N:042"
+      - "iCubDarmstadt01 S/N:025"
+      - "iCubEdinburgh01 S/N:034"
+      - "iCubErzelli01 S/N:032"
+      - "iCubErzelli02 S/N:036"
+      - "iCubFrankfurt01 S/N:019H"
+      - "iCubGenova01 S/N:000"
+      - "iCubGenova02 S/N:001"
+      - "iCubGenova03 S/N:020"
+      - "iCubGenova04 (iRonCub1) S/N:031"
+      - "iCubGenova07 S/N:040"
+      - "iCubGenova08 S/N:043"
+      - "iCubGenova09 (iRonCub3) S/N:000"
+      - "iCubGenova10 S/N:046"
+      - "iCubGenova11 S/N:050"
+      - "iCubGrenoble01 S/N:023"
+      - "iCubHamburg01 S/N:027H"
+      - "iCubHeadV3"
+      - "iCubHeidelberg01 S/N:029"
+      - "iCubHertfordshire01 S/N:009"
+      - "iCubHongKong01 S/N:041"
+      - "iCubLausanne01 S/N:005"
+      - "iCubLausanne02 S/N:033"
+      - "iCubLisboa01 S/N:004"
+      - "iCubLondon01 S/N:003"
+      - "iCubLugano01 S/N:017"
+      - "iCubLyon01 S/N:010"
+      - "iCubManchester01 S/N:011"
+      - "iCubMoscow01 S/N:038"
+      - "iCubMunich01 S/N:008"
+      - "iCubNancy01 S/N:021"
+      - "iCubNottingham01 S/N:027"
+      - "iCubTokyo01 S/N:022"
+      - "iCubParis01 S/N:002"
+      - "iCubParis02 S/N:024"
+      - "iCubPisa01 S/N:037"
+      - "iCubPlymouth01 S/N:007"
+      - "iCubPrague01 S/N:047"
+      - "iCubRome02 S/N:016"
+      - "iCubSeoul01 S/N:026"
+      - "iCubShanghai01 S/N:049"
+      - "iCubSheffield01 S/N:028"
+      - "iCubShenzhen01 S/N:039"
+      - "iCubSingapore01 S/N:035"
+      - "iCubTwente01 S/N:030"
+      - "iCubUrbana01 S/N:015"
+      - "iCubValparaiso01 S/N:048"
+      - "iCubWaterloo01 S/N:044"
+      - "iCubZagreb01 S/N:045"
+      - "R1 S/N:000"
+      - "R1 S/N:001"
+      - "R1 S/N:002"
+      - "R1 S/N:003"
 - type: textarea
+  id: description
   attributes:
     label: Request/Failure description
     description: Summarize the request concisely.

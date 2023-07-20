@@ -1,0 +1,132 @@
+name: Support Request - Complete Support Request Info
+
+on:
+ issues:
+    types: [opened]
+
+env:
+  FORM_TYPE: form-type-support
+  
+jobs:
+  trigger:
+    name: "Complete info"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repo
+      uses: actions/checkout@main
+
+    - name: Verify the form type
+      run: |
+        gh issue view ${ISSUE_NUMBER} --json labels --jq .labels[].name > labels.txt
+        echo "Found the following labels 🏷️"
+        cat labels.txt
+        echo ""
+        if grep -q ${FORM_TYPE} labels.txt; then
+          echo "verify=yes" >> $GITHUB_ENV;
+        else
+          echo "verify=no" >> $GITHUB_ENV;
+        fi
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ISSUE_NUMBER: ${{ github.event.issue.number }} 
+    
+    - name: Parse the support request
+      uses: stefanbuck/github-issue-parser@v3.0.1
+      id: issue-parser
+      with:
+        template-path: .github/ISSUE_TEMPLATE/support-request.yml
+        
+    - name: Print the fields
+      run: echo '${{ steps.issue-parser.outputs.jsonString }}'
+
+    - name: Check Selected Robot
+      if: env.verify=='yes'
+      id: check-1
+      run: |
+        if [ "${ROBOT}" == "None" ]; then
+          echo "WARNING_BODY=- [ ] enter the Robot Name, adjust the Issue Title and the Robot Label." >> $GITHUB_OUTPUT
+          echo "trigger_warning=yes" >> $GITHUB_ENV
+          echo "ROBOT_NAME=Robot Name" >> $GITHUB_OUTPUT
+          echo "ROBOT_LABEL=''" >> $GITHUB_OUTPUT
+        else
+          echo "WARNING_BODY=- [x] enter the Robot Name." >> $GITHUB_OUTPUT
+          echo "ROBOT_NAME=${ROBOT}" >> $GITHUB_OUTPUT
+          echo "ROBOT_LABEL=${ROBOT}" >> $GITHUB_OUTPUT
+        fi
+      env:
+        ROBOT: ${{ steps.issue-parser.outputs.issueparser_robot }}
+        
+
+    # Set issue title prefix according to seleced Robot Name
+    - name: Update issue title
+      uses: actions-cool/issues-helper@v3
+      id: issue-updater-title
+      with:
+        actions: 'update-issue'
+        token: ${{ secrets.GITHUB_TOKEN }}
+        issue-number: ${{ github.event.issue.number }}
+        title: "${{ steps.check-1.outputs.ROBOT_NAME }} - ${{ github.event.issue.title }}"
+        update-mode: 'replace'
+
+    # Add Robot Label according to seleced Robot Name
+    - name: Add robot label
+      uses: actions-cool/issues-helper@v3
+      id: issue-updater-label
+      with:
+        actions: 'add-labels'
+        token: ${{ secrets.GITHUB_TOKEN }}
+        issue-number: ${{ github.event.issue.number }}
+        labels: ${{ steps.check-1.outputs.ROBOT_LABEL }}
+
+    - name: Check Issue Title
+      if: env.verify=='yes'
+      id: check-2
+      run: |
+        if [ "${{ github.event.issue.title }}" == "" ]  || [ "${{ github.event.issue.title }}" == "Robot Name" ]; then
+          echo "WARNING_BODY=- [ ] give the issue a meaningful Title." >> $GITHUB_OUTPUT
+          echo "trigger_warning=yes" >> $GITHUB_ENV
+        else
+          echo "WARNING_BODY=- [x] give the issue a meaningful Title." >> $GITHUB_OUTPUT
+        fi
+
+    - name: Check Issue Description
+      if: env.verify=='yes'
+      id: check-3
+      run: |
+        echo ${#DESCRIPTION}
+        if [ "$DESCRIPTION" == "" ]  || [ ${#DESCRIPTION} -lt 30 ]; then
+        echo "WARNING_BODY=- [ ] give the issue a meaningful Description (at least 30 characters)." >> $GITHUB_OUTPUT
+        echo "trigger_warning=yes" >> $GITHUB_ENV
+        else
+        echo "WARNING_BODY=- [x] give the issue a meaningful Description." >> $GITHUB_OUTPUT
+        fi
+      env:
+        DESCRIPTION: ${{ steps.issue-parser.outputs.issueparser_description }}
+        
+        
+    - name: Print URL of problematic issue
+      if: (env.verify=='yes') && (env.trigger_warning=='yes')
+      run: |
+        echo "❌ Problems detected with ${{ github.event.issue.html_url }}"
+        
+    - name: Create comment
+      if: (env.verify=='yes') && (env.trigger_warning=='yes')
+      uses: peter-evans/create-or-update-comment@v2
+      with:
+        issue-number: ${{ github.event.issue.number }}
+        body: |
+          ## ⚠️ Detected missing mandatory information
+          Hi @${{ github.event.issue.user.login }} 👋🏻
+          
+          Some of the following points need your attention.
+          
+          You are required to:
+          ${{ steps.check-1.outputs.WARNING_BODY }}
+          ${{ steps.check-2.outputs.WARNING_BODY }}
+          ${{ steps.check-3.outputs.WARNING_BODY }}
+
+          
+          <sub>Please, mark the points above as solved once done.</sub>
+          [^1]: To get to know the allowed options for the dropdown fields, you may peruse the [**`template`**](../blob/master/.github/ISSUE_TEMPLATE/support-request.yml).
+        reactions: 'confused'
