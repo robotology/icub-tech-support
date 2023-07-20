@@ -1,8 +1,6 @@
 name: 🤖 HW Support Request
-title: Short Failure Description
 description: Support request for HW maintenance
 assignees: "sgiraz,AntonioConsilvio"
-labels: ["form-type-support"]
 
 body:
 - type: markdown
