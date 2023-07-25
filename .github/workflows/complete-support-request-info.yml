@@ -20,8 +20,11 @@ jobs:
       with:
         template-path: .github/ISSUE_TEMPLATE/support-request.yml
         
-    #- name: Print the fields
-    #  run: echo '${{ steps.issue-parser.outputs.jsonString }}'
+    - name: Print the fields
+      run: echo "${PARSER_FIELDS}"
+      # use env variables as per https://github.com/orgs/community/discussions/32012#discussioncomment-3558892
+      env:
+        PARSER_FIELDS: ${{ steps.issue-parser.outputs.jsonString }}
 
     - name: Check Selected Robot
       id: check-1
