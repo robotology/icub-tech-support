@@ -1,6 +1,7 @@
 name: 🤖 HW Support Request
 description: Support request for HW maintenance
 assignees: "sgiraz,AntonioConsilvio"
+title: "Don't enter the robot name here"
 
 body:
 - type: markdown
