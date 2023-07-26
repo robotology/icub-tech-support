@@ -33,12 +33,10 @@ jobs:
           echo "WARNING_BODY=- [ ] enter the Robot Name, adjust the Issue Title and add the Robot Label." >> $GITHUB_OUTPUT
           echo "trigger_warning=yes" >> $GITHUB_ENV
           echo "ROBOT_NAME=Robot Name" >> $GITHUB_OUTPUT
-          echo "verify=yes" >> $GITHUB_ENV;
         else
           echo "WARNING_BODY=- [x] enter the Robot Name." >> $GITHUB_OUTPUT
           echo "ROBOT_NAME=${ROBOT}" >> $GITHUB_OUTPUT
           echo "ROBOT_LABEL=${ROBOT}" >> $GITHUB_OUTPUT
-          echo "verify=no" >> $GITHUB_ENV;
         fi
       env:
         ROBOT: ${{ steps.issue-parser.outputs.issueparser_robot }}
@@ -66,23 +64,24 @@ jobs:
         labels: ${{ steps.check-1.outputs.ROBOT_LABEL }}
 
     - name: Check Issue Title
-      if: env.verify=='yes'
       id: check-2
       run: |
-        if [ "${{ github.event.issue.title }}" == "" ]  || [ "${{ steps.check-1.outputs.ROBOT_NAME }}" == "Robot Name" ]; then
+        if [ "${ISSUE_TITLE}" == "" ] || [ "${ISSUE_TITLE}" == "${TITLE_PLACEHOLDER}" ] || [ "${{ steps.check-1.outputs.ROBOT_NAME }}" == "Robot Name" ]; then
           echo "WARNING_BODY=- [ ] give the issue a meaningful Title." >> $GITHUB_OUTPUT
           echo "trigger_warning=yes" >> $GITHUB_ENV
         else
           echo "WARNING_BODY=- [x] give the issue a meaningful Title." >> $GITHUB_OUTPUT
         fi
+      env:
+        ISSUE_TITLE: ${{ github.event.issue.title }}
+        TITLE_PLACEHOLDER: "[Give a meaningful title but don't enter the robot name here]"
 
     - name: Check Issue Description
-      if: env.verify=='yes'
       id: check-3
       run: |
-        echo ${DESCRIPTION}
-        if [ "${DESCRIPTION}" == "" ]  || [ ${DESCRIPTION} -lt 30 ]; then
-        echo "WARNING_BODY=- [ ] give the issue a meaningful Description (at least 30 characters)." >> $GITHUB_OUTPUT
+        echo ${#DESCRIPTION}
+        if [ "${DESCRIPTION}" == "" ]  || [ ${#DESCRIPTION} -lt 100 ]; then
+        echo "WARNING_BODY=- [ ] give the issue a meaningful Description (at least 100 characters)." >> $GITHUB_OUTPUT
         echo "trigger_warning=yes" >> $GITHUB_ENV
         else
         echo "WARNING_BODY=- [x] give the issue a meaningful Description." >> $GITHUB_OUTPUT
@@ -92,12 +91,12 @@ jobs:
         
         
     - name: Print URL of problematic issue
-      if: (env.verify=='yes') && (env.trigger_warning=='yes')
+      if: (env.trigger_warning=='yes')
       run: |
         echo "❌ Problems detected with ${{ github.event.issue.html_url }}"
         
     - name: Create comment
-      if: (env.verify=='yes') && (env.trigger_warning=='yes')
+      if: (env.trigger_warning=='yes')
       uses: peter-evans/create-or-update-comment@v2
       with:
         issue-number: ${{ github.event.issue.number }}
