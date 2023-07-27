@@ -3,8 +3,7 @@ name: Support Request - Complete Support Request Info
 on:
  issues:
     types: [opened]
-
-  
+    
 jobs:
   trigger:
     name: "Complete info"
@@ -41,7 +40,6 @@ jobs:
       env:
         ROBOT: ${{ steps.issue-parser.outputs.issueparser_robot }}
         
-
     # Set issue title prefix according to seleced Robot Name
     - name: Update issue title
       uses: actions-cool/issues-helper@v3
@@ -50,7 +48,7 @@ jobs:
         actions: 'update-issue'
         token: ${{ secrets.GITHUB_TOKEN }}
         issue-number: ${{ github.event.issue.number }}
-        title: "${{ steps.check-1.outputs.ROBOT_NAME }} - ${{ github.event.issue.title }}"
+        title: "${{ steps.check-1.outputs.ROBOT_NAME }} – ${{ github.event.issue.title }}"
         update-mode: 'replace'
 
     # Add Robot Label according to seleced Robot Name
@@ -89,7 +87,6 @@ jobs:
       env:
         DESCRIPTION: ${{ steps.issue-parser.outputs.issueparser_description }}
         
-        
     - name: Print URL of problematic issue
       if: (env.trigger_warning=='yes')
       run: |
@@ -110,7 +107,6 @@ jobs:
           ${{ steps.check-1.outputs.WARNING_BODY }}
           ${{ steps.check-2.outputs.WARNING_BODY }}
           ${{ steps.check-3.outputs.WARNING_BODY }}
-
           
           <sub>Please, mark the points above as solved once done.</sub>
           [^1]: To get to know the allowed options for the dropdown fields, you may peruse the [**`template`**](../blob/master/.github/ISSUE_TEMPLATE/support-request.yml).
