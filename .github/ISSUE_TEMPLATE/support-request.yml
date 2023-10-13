@@ -97,7 +97,7 @@ body:
   attributes:
     label: Additional context
     description: Please, attach here any material you may consider useful (pictures, screenshots, logs, etc.).
-    placeholder: The more detailed is the material the sooner we will triage the problem.
+    placeholder: ⚠️ The more detailed is the material the sooner we will triage the problem.
 - type: textarea
   attributes:
     label: How does it affect you?
