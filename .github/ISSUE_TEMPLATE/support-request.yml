@@ -83,7 +83,7 @@ body:
   id: description
   attributes:
     label: Request/Failure description
-    description: Summarize the request concisely.
+    description: Summarize the request in a clear way.
   validations:
     required: true
 - type: textarea
