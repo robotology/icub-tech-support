@@ -1,7 +1,9 @@
 name: 🤖 HW Support Request
 description: Support request for HW maintenance
-assignees: "sgiraz,AntonioConsilvio"
 title: "[Give a meaningful title but don't enter the robot name here]"
+assignees:
+  - sgiraz
+  - AntonioConsilvio
 
 body:
 - type: markdown
@@ -91,6 +93,7 @@ body:
   attributes:
     label: Detailed context
     description: Provide a more detailed description of the problem.
+    placeholder: ⚠️ Input at least 100 charachters.
   validations:
     required: true
 - type: textarea
