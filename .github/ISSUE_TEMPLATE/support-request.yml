@@ -12,7 +12,7 @@ body:
       Also, check out our [rules for posting][support].
 
       [issue search]: https://github.com/robotology/icub-tech-support/search?q=is%3Aissue&type=issues
-      [support]: /.github/SUPPORT.md
+      [support]: https://github.com/robotology/icub-tech-support/blob/master/.github/SUPPORT.md
 - type: dropdown
   id: robot
   attributes:
