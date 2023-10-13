@@ -9,13 +9,15 @@ body:
     value: |
       ⚠
       Verify first that your issue is not [already reported on GitHub][issue search].
+      Also, check out our [rules for posting][support].
 
-      [issue search]: https://github.com/robotology/icub-tech-support/search?q=is%3Aissue&type=issues    
+      [issue search]: https://github.com/robotology/icub-tech-support/search?q=is%3Aissue&type=issues
+      [support]: /.github/SUPPORT.md
 - type: dropdown
   id: robot
   attributes:
     label: Robot Name 🤖
-    description: Please select the name of your robot.
+    description: Please, select the name of your robot.
     options:
       - "ergoCub 1.0 S/N:000"
       - "ergoCub 1.1 S/N:001"
@@ -85,6 +87,7 @@ body:
   validations:
     required: true
 - type: textarea
+  id: context
   attributes:
     label: Detailed context
     description: Provide a more detailed description of the problem.
@@ -93,7 +96,8 @@ body:
 - type: textarea
   attributes:
     label: Additional context
-    description: Please attach here any material you may consider useful (pictures, screenshots, logs, etc.).
+    description: Please, attach here any material you may consider useful (pictures, screenshots, logs, etc.).
+    placeholder: The more detailed is the material the sooner we will triage the problem.
 - type: textarea
   attributes:
     label: How does it affect you?
