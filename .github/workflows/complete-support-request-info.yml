@@ -74,18 +74,18 @@ jobs:
         ISSUE_TITLE: ${{ github.event.issue.title }}
         TITLE_PLACEHOLDER: "[Give a meaningful title but don't enter the robot name here]"
 
-    - name: Check Issue Description
+    - name: Check Issue Detailed Context
       id: check-3
       run: |
-        echo ${#DESCRIPTION}
-        if [ "${DESCRIPTION}" == "" ]  || [ ${#DESCRIPTION} -lt 100 ]; then
-        echo "WARNING_BODY=- [ ] give the issue a meaningful Description (at least 100 characters)." >> $GITHUB_OUTPUT
+        echo ${#CONTEXT}
+        if [ "${CONTEXT}" == "" ] || [ ${#CONTEXT} -lt 100 ]; then
+        echo "WARNING_BODY=- [ ] provide a Detailed Context (at least 100 characters)." >> $GITHUB_OUTPUT
         echo "trigger_warning=yes" >> $GITHUB_ENV
         else
-        echo "WARNING_BODY=- [x] give the issue a meaningful Description." >> $GITHUB_OUTPUT
+        echo "WARNING_BODY=- [x] provide a Detailed Context." >> $GITHUB_OUTPUT
         fi
       env:
-        DESCRIPTION: ${{ steps.issue-parser.outputs.issueparser_description }}
+        CONTEXT: ${{ steps.issue-parser.outputs.issueparser_context }}
         
     - name: Print URL of problematic issue
       if: (env.trigger_warning=='yes')
