@@ -93,7 +93,7 @@ body:
   attributes:
     label: Detailed context
     description: Provide a more detailed description of the problem.
-    placeholder: ⚠️ Input at least 100 charachters.
+    placeholder: ⚠️ Input at least 100 characters.
   validations:
     required: true
 - type: textarea
