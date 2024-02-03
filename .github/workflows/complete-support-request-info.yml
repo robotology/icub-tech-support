@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@main
 
     - name: Parse the support request
-      uses: stefanbuck/github-issue-parser@v3.0.1
+      uses: stefanbuck/github-issue-parser@v3
       id: issue-parser
       with:
         template-path: .github/ISSUE_TEMPLATE/support-request.yml
