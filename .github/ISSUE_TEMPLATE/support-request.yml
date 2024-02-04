@@ -81,6 +81,8 @@ body:
       - "R1 S/N:001"
       - "R1 S/N:002"
       - "R1 S/N:003"
+  validations:
+    required: true
 - type: textarea
   id: description
   attributes:
