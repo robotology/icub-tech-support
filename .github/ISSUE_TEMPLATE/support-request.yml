@@ -2,7 +2,6 @@ name: 🤖 HW Support Request
 description: Support request for HW maintenance
 title: "[Provide a meaningful TITLE, but DON'T enter the robot name here]"
 assignees:
-  - sgiraz
   - AntonioConsilvio
 
 body:
